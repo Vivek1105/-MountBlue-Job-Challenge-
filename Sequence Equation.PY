@@ -8,3 +8,33 @@ for i in range(n):
     fInvDict[int(L[i])] = i+1
 for x in range(1,n+1):
     print(fInvDict[fInvDict[x]])
+    
+    
+    
+    
+# JAVA SOLUTION 
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+    public static void main(String args[] ) throws Exception {
+        Scanner in=new Scanner(System.in);
+        int n=in.nextInt();
+        int[] a=new int[n];
+        for(int i=0;i<n;i++)
+            a[i]=in.nextInt();
+        for(int i=1;i<=n;i++){
+            for(int j=0;j<n;j++){
+                if(i==a[j]){
+                  for(int k=0;k<n;k++)  {
+                      if((j+1)==a[k])
+                          System.out.println(k+1);
+                  }
+                }
+            }
+        }
+    }
+}
