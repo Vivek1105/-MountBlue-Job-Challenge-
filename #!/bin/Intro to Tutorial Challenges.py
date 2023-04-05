@@ -33,3 +33,31 @@ if __name__ == '__main__':
     fptr.write(str(result) + '\n')
 
     fptr.close()
+    
+    
+    
+    
+    
+#     JAVA CODE 
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+       Scanner sc = new Scanner(System.in);
+        int value = sc.nextInt();
+        int cas = sc.nextInt();
+        ArrayList<Integer> ar = new ArrayList<Integer>();
+        for(int i = 0;i<cas; i++)
+        {
+            ar.add(sc.nextInt());
+        }
+        
+        for(int n = 0; n < ar.size();n++)
+        {
+            if(ar.get(n) == value)
+                System.out.println(n);
+        }
+    }
+}
