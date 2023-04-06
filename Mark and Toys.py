@@ -33,6 +33,46 @@ print(toys)
 # Another Approach 
 def maximumToys(prices, k):
     items = 0
+    
+    
+    
+    
+    
+    
+    
+    
+# JAVA CODE 
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        int numItems = in.nextInt();
+        int cash = in.nextInt();
+
+        int[] items = new int[numItems];
+        for (int i = 0; i < numItems; i++) {
+            items[i] = in.nextInt();
+        }
+
+        System.out.println(findNumItemsPurchase(items, cash));
+    }
+
+    public static int findNumItemsPurchase(int[] items, int cash) {
+        Arrays.sort(items);
+        int count = 0;
+        for (int i = 0; i < items.length; i++) {
+            if (cash - items[i] > 0) {
+                cash -= items[i];
+                count += 1;
+            } else {
+                break;
+            }
+        }
+
+        return count;
+    }
+
+}
     prices.sort()
     for p in prices:
         if p <= k:
