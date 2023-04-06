@@ -27,3 +27,34 @@ for price in prices:
         break
 
 print(toys)
+
+
+
+# Another Approach 
+def maximumToys(prices, k):
+    items = 0
+    prices.sort()
+    for p in prices:
+        if p <= k:
+            items += 1
+            k -= p
+        else:
+            break
+    return items
+
+if __name__ == '__main__':
+    fptr = open(os.environ['OUTPUT_PATH'], 'w')
+
+    nk = input().split()
+
+    n = int(nk[0])
+
+    k = int(nk[1])
+
+    prices = list(map(int, input().rstrip().split()))
+
+    result = maximumToys(prices, k)
+
+    fptr.write(str(result) + '\n')
+
+    fptr.close()
